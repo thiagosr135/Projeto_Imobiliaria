@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.PrincipalController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="335.0" prefWidth="593.0" style="-fx-background-color: #1e88e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.PrincipalController">
+   <children>
+      <AnchorPane layoutX="336.0" layoutY="7.0" prefHeight="321.0" prefWidth="251.0" style="-fx-background-color: #eceff1;">
+         <children>
+            <JFXTextField fx:id="txtUsuario" layoutX="41.0" layoutY="163.0" prefHeight="25.0" prefWidth="170.0" promptText="Usuário" />
+            <JFXPasswordField fx:id="pswSenha" layoutX="41.0" layoutY="205.0" prefHeight="25.0" prefWidth="170.0" promptText="Senha" />
+            <JFXButton fx:id="btnEntrar" buttonType="RAISED" layoutX="72.0" layoutY="259.0" prefHeight="37.0" prefWidth="107.0" ripplerFill="WHITE" style="-fx-background-color: #1e88e5;" text="Entrar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="80.0" layoutY="103.0" size="100" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="26.0" layoutY="110.0" size="60" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="171.0" layoutY="110.0" size="60" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="85.0" layoutY="137.0" text="iMOBI">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="137.0" text="SOFT" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="32.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
 </AnchorPane>

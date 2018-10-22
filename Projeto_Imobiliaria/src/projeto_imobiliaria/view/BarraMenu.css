@@ -1,0 +1,14 @@
+.jfx-button:hover{
+    background: #00e676;
+    -fx-scale-x: 1.20;
+    -fx-scale-y: 1.20;    
+}
+
+.jfx-hamburger StackPane { 
+    -fx-background-color: white;
+}
+
+.jfx-hamburger:hover{
+    -fx-scale-x: 1.20;
+    -fx-scale-y: 1.20; 
+}
