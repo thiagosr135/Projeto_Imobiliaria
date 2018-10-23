@@ -19,7 +19,7 @@ public class Projeto_Imobiliaria extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/MenuPrincipal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/Locatario.fxml"));
         
         Scene scene = new Scene(root);
         
