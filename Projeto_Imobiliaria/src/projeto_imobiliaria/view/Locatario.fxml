@@ -27,19 +27,21 @@
                      <children>
                         <AnchorPane layoutY="1.0" prefHeight="45.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <JFXRadioButton layoutX="14.0" layoutY="14.0" selected="true" text="Pessoa Física">
+                              <JFXRadioButton fx:id="rbPessoaFisica" layoutX="14.0" layoutY="14.0" onAction="#PessoaFisica" selected="true" text="Pessoa Física">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </JFXRadioButton>
-                              <JFXRadioButton layoutX="134.0" layoutY="14.0" text="Pessoa Jurídica">
+                              <JFXRadioButton fx:id="rbPessoaJuridica" layoutX="134.0" layoutY="14.0" onAction="#PessoaJurica" text="Pessoa Jurídica">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </JFXRadioButton>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutY="63.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <Separator layoutX="10.0" layoutY="401.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <AnchorPane layoutX="33.0" layoutY="203.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <AnchorPane fx:id="acpTipoPessoa" layoutX="10.0" layoutY="10.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label layoutX="13.0" layoutY="41.0" text="Nome" />
                               <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="13.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
@@ -143,8 +145,8 @@
                                  </font>
                               </Label>
                               <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" />
-                           </children></AnchorPane>
-                        <Separator layoutX="10.0" layoutY="401.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
               </content>

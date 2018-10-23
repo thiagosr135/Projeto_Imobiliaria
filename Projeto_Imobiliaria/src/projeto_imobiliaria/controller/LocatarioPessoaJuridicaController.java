@@ -26,14 +26,6 @@ public class LocatarioPessoaJuridicaController implements Initializable {
     @FXML
     private TextField txtCPF;
     @FXML
-    private TextField txtProfissao;
-    @FXML
-    private TextField txtNomeMae;
-    @FXML
-    private ComboBox<?> cbxEstadoCivil;
-    @FXML
-    private TextField txtNomeConjuge;
-    @FXML
     private TextField txtLogradouro;
     @FXML
     private TextField txtBairro;

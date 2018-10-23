@@ -13,8 +13,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.collections.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocadorController">
    <children>
       <JFXTabPane layoutX="83.0" layoutY="97.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
@@ -71,8 +72,18 @@
                         <Label layoutX="288.0" layoutY="148.0" text="Nome da mãe" />
                         <TextField fx:id="txtNomeMae" layoutX="367.0" layoutY="143.0" prefHeight="25.0" prefWidth="420.0" />
                         <Label layoutX="14.0" layoutY="179.0" text="Estado CiIvil" />
-                        <ComboBox fx:id="cbxEstadoCivil" layoutX="117.0" layoutY="173.0" prefHeight="25.0" prefWidth="157.0" />
-                        <Label layoutX="289.0" layoutY="177.0" text="Cônjuge" />
+                        <ComboBox fx:id="cbxEstadoCivil" layoutX="117.0" layoutY="173.0" prefHeight="25.0" prefWidth="157.0" promptText="Escolha...">
+                         <items>
+                         <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Solteiro(a)" />
+                         <String fx:value="Casado(a)" />
+                         <String fx:value="Separado(a)" />
+                         <String fx:value="Divorciado(a)" />
+                         <String fx:value="Viúvo(a)" />
+                         </FXCollections>
+                         </items>
+                        </ComboBox>
+                         <Label layoutX="289.0" layoutY="177.0" text="Cônjuge" />
                         <TextField fx:id="txtNomeConjuge" layoutX="367.0" layoutY="172.0" prefHeight="25.0" prefWidth="420.0" />
                         <Label layoutX="12.0" layoutY="245.0" text="Logradouro" />
                         <TextField fx:id="txtLogradouro" layoutX="117.0" layoutY="242.0" prefHeight="25.0" prefWidth="242.0" />
@@ -120,7 +131,15 @@
                            </font>
                         </Label>
                         <Separator layoutY="400.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                        <ComboBox fx:id="cbxSexo" layoutX="117.0" layoutY="113.0" prefHeight="25.0" prefWidth="157.0" />
+                        <ComboBox fx:id="cbxSexo" layoutX="117.0" layoutY="113.0" prefHeight="25.0" prefWidth="157.0" promptText="Escolha...">
+                        <items>
+                         <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Masculino" />
+                         <String fx:value="Feminino" />
+                         <String fx:value="Indefinido" />
+                         </FXCollections>
+                         </items>
+                        </ComboBox>
                         <TextField fx:id="txtNomeLocador1" layoutX="118.0" layoutY="16.0" prefHeight="25.0" prefWidth="329.0" />
                         <Label layoutX="12.0" layoutY="20.0" text="Nome, CPF, RG">
                            <font>

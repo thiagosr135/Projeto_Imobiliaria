@@ -20,12 +20,8 @@
                </cursor></JFXHamburger>
             <Label layoutX="382.0" layoutY="11.0" style="-fx-text-fill: #FFFFFF;" text="MENU PRINCIPAL" />
          </children></Pane>
-      <AnchorPane fx:id="anpMenuPrincipal" layoutX="111.0" layoutY="44.0" prefHeight="525.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
+      <AnchorPane fx:id="anpMenuPrincipal" layoutX="177.0" layoutY="37.0" prefHeight="564.0" prefWidth="687.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="37.0">
          <children>
-            <JFXDrawer fx:id="drwMenu" defaultDrawerSize="200.0" prefHeight="425.0" prefWidth="167.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets></JFXDrawer>
             <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="353.0" layoutY="311.0" size="200" />
             <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="207.0" layoutY="355.0" size="160" />
             <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="533.0" layoutY="355.0" size="160" />
@@ -41,5 +37,10 @@
             </Label>
          </children>
       </AnchorPane>
+      <JFXDrawer fx:id="drwMenu" defaultDrawerSize="200.0" layoutY="37.0" prefHeight="564.0" prefWidth="177.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="37.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXDrawer>
    </children>
 </AnchorPane>

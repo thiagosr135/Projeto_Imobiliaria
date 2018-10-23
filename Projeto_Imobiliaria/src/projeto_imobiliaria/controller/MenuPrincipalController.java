@@ -32,6 +32,8 @@ public class MenuPrincipalController implements Initializable {
     private JFXHamburger hbgMenu;
     @FXML
     private AnchorPane MainPanel;
+    @FXML
+    private AnchorPane anpMenuPrincipal;
 
     /**
      * Initializes the controller class.

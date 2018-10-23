@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
  *
  * @author thiag
  */
-public class LocadorController implements Initializable {
+public class LocatarioPessoaFisicaController implements Initializable {
 
     @FXML
     private TextField txtNomeLocador;
@@ -60,8 +60,6 @@ public class LocadorController implements Initializable {
     private TextField txtCEP;
     @FXML
     private ComboBox<?> cbxSexo;
-    @FXML
-    private TextField txtNomeLocador1;
 
     /**
      * Initializes the controller class.

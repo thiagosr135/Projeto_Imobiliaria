@@ -4,15 +4,17 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="442.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaJuridicaController">
+<AnchorPane prefHeight="442.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaFisicaController">
    <children>
-      <Label layoutX="12.0" layoutY="41.0" text="Razão Social" />
+      <Label layoutX="13.0" layoutY="41.0" text="Nome" />
       <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="13.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
@@ -49,12 +51,24 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtRazaoSocial" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
-      <Label layoutX="13.0" layoutY="72.0" text="Insc. Mun." />
-      <Label layoutX="289.0" layoutY="72.0" text="Insc. Est." />
-      <TextField fx:id="txtInscricaoEstadual" layoutX="366.0" layoutY="68.0" prefHeight="25.0" prefWidth="141.0" />
-      <Label layoutX="13.0" layoutY="102.0" text="CNPJ" />
-      <TextField fx:id="txtCNPJ" layoutX="117.0" layoutY="98.0" prefHeight="25.0" prefWidth="156.0" />
+      <TextField fx:id="txtNomeLocador" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
+      <Label layoutX="522.0" layoutY="40.0" text="Data de Nascimento" />
+      <DatePicker fx:id="dtpDataNascimento" layoutX="643.0" layoutY="38.0" prefHeight="25.0" prefWidth="143.0" />
+      <Label layoutX="13.0" layoutY="72.0" text="Sexo" />
+      <Label layoutX="286.0" layoutY="72.0" text="Nascido em" />
+      <TextField fx:id="txtNascidoEm" layoutX="366.0" layoutY="68.0" prefHeight="25.0" prefWidth="141.0" />
+      <Label layoutX="524.0" layoutY="73.0" text="RG" />
+      <TextField fx:id="txtRG" layoutX="549.0" layoutY="68.0" prefHeight="25.0" prefWidth="78.0" />
+      <Label layoutX="645.0" layoutY="72.0" text="CPF" />
+      <TextField fx:id="txtCPF" layoutX="673.0" layoutY="68.0" prefHeight="25.0" prefWidth="113.0" />
+      <Label layoutX="13.0" layoutY="101.0" text="Profissão" />
+      <TextField fx:id="txtProfissao" layoutX="116.0" layoutY="98.0" prefHeight="25.0" prefWidth="156.0" />
+      <Label layoutX="287.0" layoutY="103.0" text="Nome da mãe" />
+      <TextField fx:id="txtNomeMae" layoutX="366.0" layoutY="98.0" prefHeight="25.0" prefWidth="420.0" />
+      <Label layoutX="13.0" layoutY="134.0" text="Estado CiIvil" />
+      <ComboBox fx:id="cbxEstadoCivil" layoutX="116.0" layoutY="128.0" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="288.0" layoutY="132.0" text="Cônjuge" />
+      <TextField fx:id="txtNomeConjuge" layoutX="366.0" layoutY="127.0" prefHeight="25.0" prefWidth="420.0" />
       <Label layoutX="11.0" layoutY="200.0" text="Logradouro" />
       <TextField fx:id="txtLogradouro" layoutX="116.0" layoutY="197.0" prefHeight="25.0" prefWidth="242.0" />
       <Label layoutX="479.0" layoutY="201.0" text="Bairro" />
@@ -85,7 +99,7 @@
       </JFXButton>
       <Separator layoutX="-1.0" layoutY="295.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <Separator layoutX="-1.0" layoutY="168.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Label layoutX="10.0" layoutY="171.0" text="ENDEREÇO DA SEDE">
+      <Label layoutX="10.0" layoutY="171.0" text="ENDEREÇO">
          <font>
             <Font name="Arial Bold Italic" size="12.0" />
          </font>
@@ -101,8 +115,6 @@
             <Font name="Arial Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtInscricaoMunicipal" layoutX="117.0" layoutY="68.0" prefHeight="25.0" prefWidth="156.0" />
-      <Label layoutX="13.0" layoutY="130.0" text="Representante" />
-      <TextField fx:id="txtRepresentante" layoutX="117.0" layoutY="128.0" prefHeight="25.0" prefWidth="391.0" />
+      <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" />
    </children>
 </AnchorPane>
