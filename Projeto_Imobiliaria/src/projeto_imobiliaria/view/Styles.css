@@ -1,0 +1,21 @@
+.btn-padrao{
+    -fx-background-color:  #5bb3f2;
+}
+
+.btn-salvar:hover{
+    -fx-background-color: #33ff66;
+    -fx-scale-x: 1.10;
+    -fx-scale-y: 1.10;
+}
+
+.btn-editar:hover{
+    -fx-background-color: #ffcc00;
+    -fx-scale-x: 1.10;
+    -fx-scale-y: 1.10;
+}
+
+.btn-excluir:hover{
+    -fx-background-color: #ff0000;
+    -fx-scale-x: 1.10;
+    -fx-scale-y: 1.10;
+}
