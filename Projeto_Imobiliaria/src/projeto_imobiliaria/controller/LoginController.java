@@ -20,7 +20,7 @@ import javafx.scene.control.Label;
  *
  * @author thiag
  */
-public class PrincipalController implements Initializable {
+public class LoginController implements Initializable {
     
     @FXML
     private JFXTextField txtUsuario;

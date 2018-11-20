@@ -44,9 +44,9 @@
                         <AnchorPane fx:id="acpTipoPessoa" layoutX="10.0" layoutY="10.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label layoutX="13.0" layoutY="41.0" text="Nome" />
-                              <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="13.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+                              <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="342.0" layoutY="384.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
                                  <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -55,30 +55,9 @@
                                     <String fx:value="btn-padrao" />
                                     <String fx:value="btn-salvar" />
                                  </styleClass>
-                              </JFXButton>
-                              <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="170.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
-                                 </graphic>
-                                 <styleClass>
-                                    <String fx:value="btn-padrao" />
-                                    <String fx:value="btn-editar" />
-                                 </styleClass>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </JFXButton>
-                              <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="328.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
-                                 </graphic>
-                                 <styleClass>
-                                    <String fx:value="btn-padrao" />
-                                    <String fx:value="btn-excluir" />
-                                 </styleClass>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
                               </JFXButton>
                               <TextField fx:id="txtNomeLocador" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
                               <Label layoutX="522.0" layoutY="40.0" text="Data de Nascimento" />
@@ -194,6 +173,30 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="671.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-padrao" />
+                              <String fx:value="btn-editar" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="536.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-padrao" />
+                              <String fx:value="btn-excluir" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
                      </children></AnchorPane>
               </content>
             </Tab>

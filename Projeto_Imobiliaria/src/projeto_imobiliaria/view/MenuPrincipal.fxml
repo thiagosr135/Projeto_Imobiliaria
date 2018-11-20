@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="888.0" stylesheets="@BarraMenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.MenuPrincipalController">
+<AnchorPane fx:id="MainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.MenuPrincipalController">
    <children>
       <Pane prefHeight="37.0" prefWidth="859.0" style="-fx-background-color: #1e88e5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXHamburger fx:id="hbgMenu" layoutX="14.0" layoutY="9.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></JFXHamburger>
             <Label layoutX="382.0" layoutY="11.0" style="-fx-text-fill: #FFFFFF;" text="MENU PRINCIPAL" />
          </children></Pane>
-      <AnchorPane fx:id="anpMenuPrincipal" layoutX="177.0" layoutY="37.0" prefHeight="564.0" prefWidth="687.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="37.0">
+      <AnchorPane fx:id="anpMenuPrincipal" layoutX="177.0" layoutY="37.0" prefHeight="564.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="37.0">
          <children>
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="353.0" layoutY="311.0" size="200" />
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="207.0" layoutY="355.0" size="160" />
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="533.0" layoutY="355.0" size="160" />
-            <Label layoutX="344.0" layoutY="312.0" text="iMOBI">
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="252.0" layoutY="334.0" size="200" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="106.0" layoutY="378.0" size="160" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="432.0" layoutY="378.0" size="160" />
+            <Label layoutX="243.0" layoutY="335.0" text="iMOBI">
                <font>
                   <Font name="Yu Gothic UI Semibold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="458.0" layoutY="312.0" text="SOFT" textFill="GREY">
+            <Label layoutX="357.0" layoutY="335.0" text="SOFT" textFill="GREY">
                <font>
                   <Font name="Yu Gothic UI Semibold" size="40.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <JFXDrawer fx:id="drwMenu" defaultDrawerSize="200.0" layoutY="37.0" prefHeight="564.0" prefWidth="177.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="37.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </JFXDrawer>
+      <AnchorPane layoutX="-1.0" layoutY="37.0" prefHeight="564.0" prefWidth="177.0" style="-fx-background-color: #FDF7FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="37.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="564.0" prefWidth="37.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <JFXButton graphicTextGap="30.0" layoutX="35.0" layoutY="33.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="LOCADOR" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <JFXButton graphicTextGap="37.0" layoutY="78.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="LOCATÁRIO" />
+            <JFXButton graphicTextGap="33.0" layoutY="123.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="OBJETO" />
+            <JFXButton graphicTextGap="29.0" layoutY="168.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="FIADOR" />
+            <JFXButton graphicTextGap="34.0" layoutY="213.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="CONTRATO" />
+            <JFXButton graphicTextGap="34.0" layoutY="258.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="RECIBO" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="HOME" layoutX="9.0" layoutY="152.0" size="25" text="" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="USER_CIRCLE" layoutX="7.0" layoutY="60.0" size="25" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="USER" layoutX="12.0" layoutY="104.0" size="25" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="USERS" layoutX="6.0" layoutY="197.0" size="25" text="" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="FILE_TEXT" layoutX="10.0" layoutY="240.0" size="25" />
+            <FontAwesomeIconView fill="#2279bf" glyphName="STICKY_NOTE" layoutX="9.0" layoutY="286.0" size="25" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
