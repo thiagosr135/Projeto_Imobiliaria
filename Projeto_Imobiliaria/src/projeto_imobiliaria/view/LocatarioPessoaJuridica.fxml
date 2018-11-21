@@ -13,42 +13,6 @@
 <AnchorPane prefHeight="442.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaJuridicaController">
    <children>
       <Label layoutX="12.0" layoutY="41.0" text="Razão Social" />
-      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="13.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-salvar" />
-         </styleClass>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="170.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
-         </graphic>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-editar" />
-         </styleClass>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="328.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
-         </graphic>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-excluir" />
-         </styleClass>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
       <TextField fx:id="txtRazaoSocial" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
       <Label layoutX="13.0" layoutY="72.0" text="Insc. Mun." />
       <Label layoutX="289.0" layoutY="72.0" text="Insc. Est." />
@@ -104,5 +68,20 @@
       <TextField fx:id="txtInscricaoMunicipal" layoutX="117.0" layoutY="68.0" prefHeight="25.0" prefWidth="156.0" />
       <Label layoutX="13.0" layoutY="130.0" text="Representante" />
       <TextField fx:id="txtRepresentante" layoutX="117.0" layoutY="128.0" prefHeight="25.0" prefWidth="391.0" />
+      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="328.0" layoutY="386.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="btn-padrao" />
+            <String fx:value="btn-salvar" />
+         </styleClass>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

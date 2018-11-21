@@ -5,19 +5,15 @@
  */
 package projeto_imobiliaria.controller;
 
-import com.jfoenix.controls.JFXDrawer;
-import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -27,42 +23,52 @@ import javafx.scene.layout.VBox;
 public class MenuPrincipalController implements Initializable {
 
     @FXML
-    private JFXDrawer drwMenu;
-    @FXML
-    private JFXHamburger hbgMenu;
+    private AnchorPane rootPane;
     @FXML
     private AnchorPane MainPanel;
     @FXML
-    private AnchorPane anpMenuPrincipal;
+    private Label lbTitulo;
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /** BARRA DE MENU */
-        /** ABRIR BARRA DE MENU */
-         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/projeto_imobiliaria/view/MenuBar.fxml"));
-            VBox box = loader.load();
-            drwMenu.setSidePane(box);
-        } catch (IOException ex) {
-            Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-       HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hbgMenu);
-        transition.setRate(-1);
-        hbgMenu.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_PRESSED, (e) -> {
-            transition.setRate(transition.getRate() * -1);
-            transition.play();
-            
-            if (drwMenu.isOpened()) {
-                drwMenu.close();
-            } else {
-                drwMenu.open();
-            }
-        });
+       
         
     }    
+
+    @FXML
+    private void abrirLocador(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/Locador.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void abrirLocatario(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/Locatario.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void abrirObjeto(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/Objeto.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void abrirFiador(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/Fiador.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void abrirContrato(ActionEvent event) {
+    }
+
+    @FXML
+    private void abrirRecibo(ActionEvent event) {
+    }
     
 }

@@ -2,54 +2,93 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.MenuPrincipalController">
+<AnchorPane fx:id="MainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.MenuPrincipalController">
    <children>
-      <Pane prefHeight="37.0" prefWidth="859.0" style="-fx-background-color: #1e88e5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="175.0" prefHeight="37.0" prefWidth="789.0" style="-fx-background-color: #2279bf;" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="382.0" layoutY="11.0" style="-fx-text-fill: #FFFFFF;" text="MENU PRINCIPAL" />
+            <Label fx:id="lbTitulo" layoutX="361.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="MENU PRINCIPAL" />
          </children></Pane>
-      <AnchorPane fx:id="anpMenuPrincipal" layoutX="177.0" layoutY="37.0" prefHeight="564.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="37.0">
+      <AnchorPane fx:id="rootPane" layoutX="176.0" layoutY="37.0" prefHeight="515.0" prefWidth="799.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="37.0">
          <children>
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="252.0" layoutY="334.0" size="200" />
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="106.0" layoutY="378.0" size="160" />
-            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="432.0" layoutY="378.0" size="160" />
-            <Label layoutX="243.0" layoutY="335.0" text="iMOBI">
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="308.0" layoutY="310.0" size="200" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="162.0" layoutY="354.0" size="160" text="" />
+            <FontAwesomeIconView fill="#1e88e5" glyphName="HOME" layoutX="488.0" layoutY="354.0" size="160" />
+            <Label layoutX="299.0" layoutY="311.0" text="iMOBI">
                <font>
                   <Font name="Yu Gothic UI Semibold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="357.0" layoutY="335.0" text="SOFT" textFill="GREY">
+            <Label layoutX="413.0" layoutY="311.0" text="SOFT" textFill="GREY">
                <font>
                   <Font name="Yu Gothic UI Semibold" size="40.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-1.0" layoutY="37.0" prefHeight="564.0" prefWidth="177.0" style="-fx-background-color: #FDF7FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="37.0">
+      <AnchorPane layoutX="-1.0" prefHeight="552.0" prefWidth="177.0" style="-fx-background-color: #2279bf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="564.0" prefWidth="37.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="515.0" prefWidth="37.0" style="-fx-background-color: #2279bf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <effect>
                   <DropShadow />
                </effect>
             </AnchorPane>
-            <JFXButton graphicTextGap="30.0" layoutX="35.0" layoutY="33.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="LOCADOR" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <JFXButton graphicTextGap="37.0" layoutY="78.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="LOCATÁRIO" />
-            <JFXButton graphicTextGap="33.0" layoutY="123.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="OBJETO" />
-            <JFXButton graphicTextGap="29.0" layoutY="168.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="FIADOR" />
-            <JFXButton graphicTextGap="34.0" layoutY="213.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="CONTRATO" />
-            <JFXButton graphicTextGap="34.0" layoutY="258.0" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" text="RECIBO" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="HOME" layoutX="9.0" layoutY="152.0" size="25" text="" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="USER_CIRCLE" layoutX="7.0" layoutY="60.0" size="25" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="USER" layoutX="12.0" layoutY="104.0" size="25" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="USERS" layoutX="6.0" layoutY="197.0" size="25" text="" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="FILE_TEXT" layoutX="10.0" layoutY="240.0" size="25" />
-            <FontAwesomeIconView fill="#2279bf" glyphName="STICKY_NOTE" layoutX="9.0" layoutY="286.0" size="25" />
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="9.0" layoutY="170.0" size="25" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="6.0" layoutY="215.0" size="25" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fill="WHITE" glyphName="FILE_TEXT" layoutX="10.0" layoutY="258.0" size="25">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fill="WHITE" glyphName="STICKY_NOTE" layoutX="9.0" layoutY="304.0" size="25">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <JFXButton alignment="CENTER" graphicTextGap="30.0" layoutY="51.0" onAction="#abrirLocador" prefHeight="37.0" prefWidth="176.0" styleClass="btn-menu" stylesheets="@Styles.css" text="LOCADOR" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton alignment="CENTER" graphicTextGap="30.0" layoutY="96.0" onAction="#abrirLocatario" prefHeight="37.0" prefWidth="177.0" ripplerFill="#1e88e5" styleClass="btn-menu" stylesheets="@Styles.css" text="LOCATÁRIO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton alignment="CENTER" graphicTextGap="33.0" layoutY="141.0" onAction="#abrirObjeto" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" styleClass="btn-menu" stylesheets="@Styles.css" text="OBJETO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton alignment="CENTER" graphicTextGap="29.0" layoutY="186.0" onAction="#abrirFiador" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" styleClass="btn-menu" stylesheets="@Styles.css" text="FIADOR" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton alignment="CENTER" graphicTextGap="34.0" layoutY="231.0" onAction="#abrirContrato" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" styleClass="btn-menu" stylesheets="@Styles.css" text="CONTRATO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton alignment="CENTER" graphicTextGap="34.0" layoutY="276.0" onAction="#abrirRecibo" prefHeight="37.0" prefWidth="176.0" ripplerFill="#1e88e5" styleClass="btn-menu" stylesheets="@Styles.css" text="RECIBO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="11.0" layoutY="123.0" size="25">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER_CIRCLE_ALT" layoutX="8.0" layoutY="78.0" size="25">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
          </children>
       </AnchorPane>
    </children>
