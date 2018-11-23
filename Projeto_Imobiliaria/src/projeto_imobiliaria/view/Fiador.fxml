@@ -1,11 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.FiadorController">
-    
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioController">
+   <children>
+      <JFXTabPane layoutX="77.0" layoutY="63.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="DADOS CADASTRAIS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="489.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0">
+                           <children>
+                              <Label layoutX="13.0" layoutY="88.0" text="Nome" AnchorPane.leftAnchor="13.0" />
+                              <TextField fx:id="txtNomeLocador" layoutX="116.0" layoutY="85.0" prefHeight="25.0" prefWidth="391.0" />
+                              <Label layoutX="522.0" layoutY="87.0" text="Data de Nascimento" />
+                              <DatePicker fx:id="dtpDataNascimento" layoutX="643.0" layoutY="85.0" prefHeight="25.0" prefWidth="143.0" />
+                              <Label layoutX="13.0" layoutY="119.0" text="Sexo" />
+                              <Label layoutX="286.0" layoutY="119.0" text="Nascido em" />
+                              <TextField fx:id="txtNascidoEm" layoutX="366.0" layoutY="115.0" prefHeight="25.0" prefWidth="141.0" />
+                              <Label layoutX="524.0" layoutY="120.0" text="RG" />
+                              <TextField fx:id="txtRG" layoutX="549.0" layoutY="115.0" prefHeight="25.0" prefWidth="78.0" />
+                              <Label layoutX="645.0" layoutY="119.0" text="CPF" />
+                              <TextField fx:id="txtCPF" layoutX="673.0" layoutY="115.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="13.0" layoutY="148.0" text="Profissão" />
+                              <TextField fx:id="txtProfissao" layoutX="116.0" layoutY="145.0" prefHeight="25.0" prefWidth="156.0" />
+                              <Label layoutX="287.0" layoutY="150.0" text="Nome da mãe" />
+                              <TextField fx:id="txtNomeMae" layoutX="366.0" layoutY="145.0" prefHeight="25.0" prefWidth="420.0" />
+                              <Label layoutX="13.0" layoutY="181.0" text="Estado CiIvil" />
+                              <ComboBox fx:id="cbxEstadoCivil" layoutX="116.0" layoutY="175.0" prefHeight="25.0" prefWidth="157.0" promptText="Selecione">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Solteiro(a)" />
+                                       <String fx:value="Casado(a)" />
+                                       <String fx:value="Separado(a)" />
+                                       <String fx:value="Divorciado(a)" />
+                                       <String fx:value="Viúvo(a)" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                              <Label layoutX="288.0" layoutY="179.0" text="Cônjuge" />
+                              <TextField fx:id="txtNomeConjuge" layoutX="366.0" layoutY="174.0" prefHeight="25.0" prefWidth="420.0" />
+                              <Label layoutX="11.0" layoutY="247.0" text="Logradouro" />
+                              <TextField fx:id="txtLogradouro" layoutX="116.0" layoutY="244.0" prefHeight="25.0" prefWidth="242.0" />
+                              <Label layoutX="479.0" layoutY="248.0" text="Bairro" />
+                              <TextField fx:id="txtBairro" layoutX="521.0" layoutY="243.0" prefHeight="25.0" prefWidth="265.0" />
+                              <Label layoutX="11.0" layoutY="278.0" text="Cidade" />
+                              <TextField fx:id="txtCidade" layoutX="116.0" layoutY="273.0" prefHeight="25.0" prefWidth="243.0" />
+                              <Label layoutX="376.0" layoutY="277.0" text="UF" />
+                              <TextField fx:id="txtUF" layoutX="399.0" layoutY="273.0" prefHeight="25.0" prefWidth="58.0" />
+                              <Label layoutX="378.0" layoutY="248.0" text="Nº" />
+                              <TextField fx:id="txtNumeroCasa" layoutX="399.0" layoutY="243.0" prefHeight="25.0" prefWidth="57.0" />
+                              <Label layoutX="11.0" layoutY="306.0" text="Complemento" />
+                              <TextField fx:id="txtComplemento" layoutX="116.0" layoutY="302.0" prefHeight="25.0" prefWidth="342.0" />
+                              <Label layoutX="14.0" layoutY="365.0" text="Telefone" />
+                              <TextField fx:id="txtTelefone" layoutX="115.0" layoutY="362.0" prefHeight="25.0" prefWidth="145.0" />
+                              <Label layoutX="285.0" layoutY="366.0" text="Celular" />
+                              <TextField fx:id="txtCelular" layoutX="335.0" layoutY="361.0" prefHeight="25.0" prefWidth="123.0" />
+                              <Label layoutX="478.0" layoutY="365.0" text="E-mail" />
+                              <TextField fx:id="txtEmail" layoutX="521.0" layoutY="361.0" prefHeight="25.0" prefWidth="266.0" />
+                              <Label layoutX="480.0" layoutY="276.0" text="CEP" />
+                              <TextField fx:id="txtCEP" layoutX="521.0" layoutY="272.0" prefHeight="25.0" prefWidth="188.0" />
+                              <JFXButton graphicTextGap="5.0" layoutX="709.0" layoutY="272.0" onAction="#buscarCEP" prefHeight="25.0" styleClass="btn-padrao" stylesheets="@Styles.css" text="BUSCAR" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Separator layoutY="342.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Separator layoutY="215.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Label layoutX="10.0" layoutY="218.0" text="ENDEREÇO">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="345.0" text="CONTATO">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutY="60.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Label layoutX="12.0" layoutY="64.0" text="DADOS PESSOAIS" AnchorPane.leftAnchor="12.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="115.0" prefHeight="25.0" prefWidth="157.0" />
+                              <Separator layoutY="405.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <ComboBox layoutX="10.0" layoutY="29.0" prefHeight="25.0" prefWidth="262.0" promptText="Escolha" />
+                              <Label layoutX="12.0" layoutY="10.0" text="LOCATÁRIO" AnchorPane.leftAnchor="12.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="16.0" layoutY="5.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="322.0" layoutY="427.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="btn-padrao" />
+                              <String fx:value="btn-salvar" />
+                           </styleClass>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="CONSULTA">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTreeTableView layoutY="45.0" prefHeight="373.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <columns>
+                              <TreeTableColumn prefWidth="55.0" text="ID" />
+                              <TreeTableColumn prefWidth="219.0" text="Nome" />
+                              <TreeTableColumn prefWidth="92.0" text="RG" />
+                              <TreeTableColumn prefWidth="170.0" text="CPF" />
+                              <TreeTableColumn prefWidth="139.0" text="Data de Nascimento" />
+                              <TreeTableColumn prefWidth="124.0" text="Celular" />
+                           </columns>
+                        </JFXTreeTableView>
+                        <AnchorPane layoutX="59.0" prefHeight="62.0" prefWidth="165.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <AnchorPane prefHeight="45.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <JFXRadioButton layoutX="14.0" layoutY="14.0" selected="true" text="Pessoa Física">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="134.0" layoutY="14.0" text="Pessoa Jurídica">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXRadioButton>
+                              <TextField fx:id="txtNomeLocador1" layoutX="481.0" layoutY="10.0" prefHeight="25.0" prefWidth="229.0" />
+                              <Label layoutX="387.0" layoutY="14.0" text="Nome, CPF, RG">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton graphicTextGap="5.0" layoutX="710.0" layoutY="10.0" prefHeight="25.0" styleClass="btn-padrao" stylesheets="@Styles.css" text="BUSCAR" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="671.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-padrao" />
+                              <String fx:value="btn-editar" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="536.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-padrao" />
+                              <String fx:value="btn-excluir" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
 </AnchorPane>

@@ -5,10 +5,15 @@
  */
 package projeto_imobiliaria.controller;
 
+import br.com.parg.viacep.ViaCEP;
+import br.com.parg.viacep.ViaCEPException;
+import br.eti.diegofonseca.MaskFieldUtil;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -67,6 +72,33 @@ public class LocatarioPessoaFisicaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+       //Máscaras dos campos
+        MaskFieldUtil.cpfField(txtCPF);
+        MaskFieldUtil.numericField(txtNumeroCasa);
+        MaskFieldUtil.foneField(txtTelefone);
+        MaskFieldUtil.foneField(txtCelular);
+        MaskFieldUtil.cepField(txtCEP);
     }    
+
+    @FXML
+    private void buscarCEP(ActionEvent event) {
+         ViaCEP viaCep = new ViaCEP();
+
+        try {
+            viaCep.buscar(txtCEP.getText());
+
+            txtLogradouro.setText(viaCep.getLogradouro());
+            txtBairro.setText(viaCep.getBairro());
+            txtCidade.setText(viaCep.getLocalidade());
+            txtUF.setText(viaCep.getUf());
+            
+        } catch (ViaCEPException ex) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERRO");
+            alert.setHeaderText("Não foi possível encontrar o CEP digitado !");
+            alert.setContentText("");
+            alert.showAndWait();
+        }
+    }
     
 }

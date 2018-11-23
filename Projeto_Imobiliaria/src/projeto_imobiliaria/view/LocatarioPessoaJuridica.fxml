@@ -60,7 +60,7 @@
          </font>
       </Label>
       <Separator layoutX="-1.0" layoutY="13.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Label layoutX="12.0" layoutY="17.0" text="DADOS PESSOAIS">
+      <Label layoutX="12.0" layoutY="17.0" text="DADOS ">
          <font>
             <Font name="Arial Bold Italic" size="12.0" />
          </font>
@@ -68,7 +68,7 @@
       <TextField fx:id="txtInscricaoMunicipal" layoutX="117.0" layoutY="68.0" prefHeight="25.0" prefWidth="156.0" />
       <Label layoutX="13.0" layoutY="130.0" text="Representante" />
       <TextField fx:id="txtRepresentante" layoutX="117.0" layoutY="128.0" prefHeight="25.0" prefWidth="391.0" />
-      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="328.0" layoutY="386.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="335.0" layoutY="386.0" onAction="#buscarCEP" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
          </graphic>

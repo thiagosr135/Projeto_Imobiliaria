@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -15,42 +16,6 @@
 <AnchorPane prefHeight="442.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaFisicaController">
    <children>
       <Label layoutX="13.0" layoutY="41.0" text="Nome" />
-      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="13.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-salvar" />
-         </styleClass>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="170.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
-         </graphic>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-editar" />
-         </styleClass>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" graphicTextGap="15.0" layoutX="328.0" layoutY="384.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
-         </graphic>
-         <styleClass>
-            <String fx:value="btn-padrao" />
-            <String fx:value="btn-excluir" />
-         </styleClass>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
       <TextField fx:id="txtNomeLocador" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
       <Label layoutX="522.0" layoutY="40.0" text="Data de Nascimento" />
       <DatePicker fx:id="dtpDataNascimento" layoutX="643.0" layoutY="38.0" prefHeight="25.0" prefWidth="143.0" />
@@ -66,7 +31,17 @@
       <Label layoutX="287.0" layoutY="103.0" text="Nome da mãe" />
       <TextField fx:id="txtNomeMae" layoutX="366.0" layoutY="98.0" prefHeight="25.0" prefWidth="420.0" />
       <Label layoutX="13.0" layoutY="134.0" text="Estado CiIvil" />
-      <ComboBox fx:id="cbxEstadoCivil" layoutX="116.0" layoutY="128.0" prefHeight="25.0" prefWidth="157.0" />
+      <ComboBox fx:id="cbxEstadoCivil" layoutX="116.0" layoutY="128.0" prefHeight="25.0" prefWidth="157.0" promptText="Selecione">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Solteiro(a)" />
+          <String fx:value="Casado(a)" />
+          <String fx:value="Separado(a)" />
+          <String fx:value="Divorciado(a)" />
+          <String fx:value="Viúvo(a)" />
+        </FXCollections>
+      </items>
+    </ComboBox>
       <Label layoutX="288.0" layoutY="132.0" text="Cônjuge" />
       <TextField fx:id="txtNomeConjuge" layoutX="366.0" layoutY="127.0" prefHeight="25.0" prefWidth="420.0" />
       <Label layoutX="11.0" layoutY="200.0" text="Logradouro" />
@@ -89,7 +64,7 @@
       <TextField fx:id="txtEmail" layoutX="521.0" layoutY="314.0" prefHeight="25.0" prefWidth="266.0" />
       <Label layoutX="480.0" layoutY="229.0" text="CEP" />
       <TextField fx:id="txtCEP" layoutX="521.0" layoutY="225.0" prefHeight="25.0" prefWidth="188.0" />
-      <JFXButton graphicTextGap="5.0" layoutX="709.0" layoutY="225.0" prefHeight="25.0" styleClass="btn-padrao" stylesheets="@Styles.css" text="BUSCAR" textFill="WHITE">
+      <JFXButton graphicTextGap="5.0" layoutX="709.0" layoutY="225.0" onAction="#buscarCEP" prefHeight="25.0" styleClass="btn-padrao" stylesheets="@Styles.css" text="BUSCAR" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
          </graphic>
@@ -116,5 +91,20 @@
          </font>
       </Label>
       <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" />
+      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="335.0" layoutY="386.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="btn-padrao" />
+            <String fx:value="btn-salvar" />
+         </styleClass>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

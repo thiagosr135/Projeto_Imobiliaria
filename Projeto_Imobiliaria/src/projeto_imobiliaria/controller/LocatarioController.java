@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -33,46 +34,6 @@ public class LocatarioController implements Initializable {
     private JFXRadioButton rbPessoaJuridica;
     @FXML
     private JFXRadioButton rbPessoaFisica;
-    @FXML
-    private TextField txtNomeLocador;
-    @FXML
-    private DatePicker dtpDataNascimento;
-    @FXML
-    private TextField txtNascidoEm;
-    @FXML
-    private TextField txtRG;
-    @FXML
-    private TextField txtCPF;
-    @FXML
-    private TextField txtProfissao;
-    @FXML
-    private TextField txtNomeMae;
-    @FXML
-    private ComboBox<?> cbxEstadoCivil;
-    @FXML
-    private TextField txtNomeConjuge;
-    @FXML
-    private TextField txtLogradouro;
-    @FXML
-    private TextField txtBairro;
-    @FXML
-    private TextField txtCidade;
-    @FXML
-    private TextField txtUF;
-    @FXML
-    private TextField txtNumeroCasa;
-    @FXML
-    private TextField txtComplemento;
-    @FXML
-    private TextField txtTelefone;
-    @FXML
-    private TextField txtCelular;
-    @FXML
-    private TextField txtEmail;
-    @FXML
-    private TextField txtCEP;
-    @FXML
-    private ComboBox<?> cbxSexo;
 
     /**
      * Initializes the controller class.
@@ -91,7 +52,11 @@ public class LocatarioController implements Initializable {
            rbPessoaFisica.setSelected(false);
            AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/LocatarioPessoaJuridica.fxml"));
            acpTipoPessoa.getChildren().setAll(pane);
-        }else{} 
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro ao carregar");
+            alert.setHeaderText("Não foi possível abrir");
+        } 
     }
 
     //Se o botão Pessoa Física for selecionado
@@ -102,7 +67,11 @@ public class LocatarioController implements Initializable {
            rbPessoaJuridica.setSelected(false);
            AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/LocatarioPessoaFisica.fxml"));
            acpTipoPessoa.getChildren().setAll(pane);
-        }else{};
+        }else{
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("Erro ao carregar");
+             alert.setHeaderText("Não foi possível abrir");
+        };
     }
     
 }
