@@ -23,8 +23,8 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="800.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="86.0" text="Nome" />
-                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="14.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="86.0" text="*Nome" />
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="14.0" layoutY="430.0" onAction="#Salvar" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
                            </graphic>
@@ -58,20 +58,20 @@
                               <Cursor fx:constant="HAND" />
                            </cursor></JFXButton>
                         <TextField fx:id="txtNomeLocador" layoutX="117.0" layoutY="83.0" prefHeight="25.0" prefWidth="391.0" />
-                        <Label layoutX="523.0" layoutY="85.0" text="Data de Nascimento" />
+                        <Label layoutX="523.0" layoutY="85.0" text="*Data de Nascimento" />
                         <DatePicker fx:id="dtpDataNascimento" layoutX="644.0" layoutY="83.0" prefHeight="25.0" prefWidth="143.0" />
-                        <Label layoutX="14.0" layoutY="117.0" text="Sexo" />
-                        <Label layoutX="287.0" layoutY="117.0" text="Nascido em" />
+                        <Label layoutX="14.0" layoutY="117.0" text="*Sexo" />
+                        <Label layoutX="287.0" layoutY="117.0" text="*Nascido em" />
                         <TextField fx:id="txtNascidoEm" layoutX="367.0" layoutY="113.0" prefHeight="25.0" prefWidth="141.0" />
-                        <Label layoutX="525.0" layoutY="118.0" text="RG" />
+                        <Label layoutX="525.0" layoutY="118.0" text="*RG" />
                         <TextField fx:id="txtRG" layoutX="550.0" layoutY="113.0" prefHeight="25.0" prefWidth="78.0" />
-                        <Label layoutX="646.0" layoutY="117.0" text="CPF" />
+                        <Label layoutX="646.0" layoutY="117.0" text="*CPF" />
                         <TextField fx:id="txtCPF" layoutX="674.0" layoutY="113.0" prefHeight="25.0" prefWidth="113.0" />
-                        <Label layoutX="14.0" layoutY="146.0" text="Profissão" />
+                        <Label layoutX="14.0" layoutY="146.0" text="*Profissão" />
                         <TextField fx:id="txtProfissao" layoutX="117.0" layoutY="143.0" prefHeight="25.0" prefWidth="156.0" />
-                        <Label layoutX="288.0" layoutY="148.0" text="Nome da mãe" />
+                        <Label layoutX="288.0" layoutY="148.0" text="*Nome da mãe" />
                         <TextField fx:id="txtNomeMae" layoutX="367.0" layoutY="143.0" prefHeight="25.0" prefWidth="420.0" />
-                        <Label layoutX="14.0" layoutY="179.0" text="Estado CiIvil" />
+                        <Label layoutX="14.0" layoutY="179.0" text="*Estado CiIvil" />
                         <ComboBox fx:id="cbxEstadoCivil" layoutX="117.0" layoutY="173.0" prefHeight="25.0" prefWidth="157.0" promptText="Escolha...">
                          <items>
                          <FXCollections fx:factory="observableArrayList">
@@ -83,25 +83,25 @@
                          </FXCollections>
                          </items>
                         </ComboBox>
-                         <Label layoutX="289.0" layoutY="177.0" text="Cônjuge" />
+                         <Label layoutX="289.0" layoutY="177.0" text="*Cônjuge" />
                         <TextField fx:id="txtNomeConjuge" layoutX="367.0" layoutY="172.0" prefHeight="25.0" prefWidth="420.0" />
-                        <Label layoutX="12.0" layoutY="245.0" text="Logradouro" />
+                        <Label layoutX="12.0" layoutY="245.0" text="*Logradouro" />
                         <TextField fx:id="txtLogradouro" layoutX="117.0" layoutY="242.0" prefHeight="25.0" prefWidth="242.0" />
-                        <Label layoutX="480.0" layoutY="246.0" text="Bairro" />
+                        <Label layoutX="480.0" layoutY="246.0" text="*Bairro" />
                         <TextField fx:id="txtBairro" layoutX="522.0" layoutY="241.0" prefHeight="25.0" prefWidth="265.0" />
-                        <Label layoutX="12.0" layoutY="276.0" text="Cidade" />
+                        <Label layoutX="12.0" layoutY="276.0" text="*Cidade" />
                         <TextField fx:id="txtCidade" layoutX="117.0" layoutY="271.0" prefHeight="25.0" prefWidth="243.0" />
-                        <Label layoutX="377.0" layoutY="275.0" text="UF" />
+                        <Label layoutX="377.0" layoutY="275.0" text="*UF" />
                         <TextField fx:id="txtUF" layoutX="400.0" layoutY="271.0" prefHeight="25.0" prefWidth="58.0" />
-                        <Label layoutX="379.0" layoutY="246.0" text="Nº" />
+                        <Label layoutX="377.0" layoutY="246.0" text="*Nº" />
                         <TextField fx:id="txtNumeroCasa" layoutX="400.0" layoutY="241.0" prefHeight="25.0" prefWidth="57.0" />
                         <Label layoutX="12.0" layoutY="304.0" text="Complemento" />
                         <TextField fx:id="txtComplemento" layoutX="117.0" layoutY="300.0" prefHeight="25.0" prefWidth="342.0" />
                         <Label layoutX="15.0" layoutY="363.0" text="Telefone" />
                         <TextField fx:id="txtTelefone" layoutX="116.0" layoutY="360.0" prefHeight="25.0" prefWidth="145.0" />
-                        <Label layoutX="286.0" layoutY="364.0" text="Celular" />
+                        <Label layoutX="286.0" layoutY="364.0" text="*Celular" />
                         <TextField fx:id="txtCelular" layoutX="336.0" layoutY="359.0" prefHeight="25.0" prefWidth="123.0" />
-                        <Label layoutX="479.0" layoutY="363.0" text="E-mail" />
+                        <Label layoutX="479.0" layoutY="363.0" text="*E-mail" />
                         <TextField fx:id="txtEmail" layoutX="522.0" layoutY="359.0" prefHeight="25.0" prefWidth="266.0" />
                         <Label layoutX="481.0" layoutY="274.0" text="CEP" />
                         <TextField fx:id="txtCEP" layoutX="522.0" layoutY="270.0" prefHeight="25.0" prefWidth="188.0" />

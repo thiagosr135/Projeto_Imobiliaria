@@ -17,6 +17,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import projeto_imobiliaria.model.Locador;
 
 /**
  * FXML Controller class
@@ -80,6 +84,7 @@ public class LocadorController implements Initializable {
         MaskFieldUtil.foneField(txtTelefone);
         MaskFieldUtil.foneField(txtCelular);
         MaskFieldUtil.cepField(txtCEP);
+        
     }    
 
     @FXML
@@ -103,4 +108,37 @@ public class LocadorController implements Initializable {
         }
 
     }    
+
+    @FXML
+    private void Salvar(ActionEvent event) {
+    /** Salvar dados do Locador*/
+    
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
+        EntityManager em = emf.createEntityManager();
+        
+        Locador locador = new Locador();
+        
+        locador.setNome(txtNomeLocador.getText());
+//        Datanascimento
+        locador.setSexo((String) cbxSexo.getSelectionModel().getSelectedItem());
+        locador.setLocalNascimento(txtNascidoEm.getText());
+        locador.setRG(txtRG.getText());
+        locador.setCPF(txtCPF.getText());
+        locador.setProfissao(txtProfissao.getText());
+        locador.setNomeMae(txtNomeMae.getText());
+        locador.setEstadoCivil((String) cbxEstadoCivil.getSelectionModel().getSelectedItem());
+        locador.setConjuge(txtNomeConjuge.getText());
+        locador.setLogradouro(txtLogradouro.getText());
+        locador.setNumeroCasa(Integer.parseInt(txtNumeroCasa.getText()));
+        locador.setBairro(txtBairro.getText());
+        locador.setCidade(txtCidade.getText());
+        locador.setUF(txtUF.getText());
+        locador.setCEP(txtCEP.getText());
+        locador.setComplemento(txtComplemento.getText());
+        locador.setTelefone(txtTelefone.getText());
+        locador.setCelular(txtCelular.getText());
+        locador.setEmail(txtEmail.getText());
+     
+    }
+    
 }
