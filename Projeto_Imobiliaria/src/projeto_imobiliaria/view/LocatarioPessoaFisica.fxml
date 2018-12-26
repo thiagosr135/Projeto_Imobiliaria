@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="442.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaFisicaController">
+<AnchorPane prefHeight="494.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.LocatarioPessoaFisicaController">
    <children>
       <Label layoutX="13.0" layoutY="41.0" text="Nome" />
-      <TextField fx:id="txtNomeLocador" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
+      <TextField fx:id="txtNomeLocatario" layoutX="116.0" layoutY="38.0" prefHeight="25.0" prefWidth="391.0" />
       <Label layoutX="522.0" layoutY="40.0" text="Data de Nascimento" />
       <DatePicker fx:id="dtpDataNascimento" layoutX="643.0" layoutY="38.0" prefHeight="25.0" prefWidth="143.0" />
       <Label layoutX="13.0" layoutY="72.0" text="Sexo" />
@@ -41,6 +41,9 @@
           <String fx:value="Viúvo(a)" />
         </FXCollections>
       </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
     </ComboBox>
       <Label layoutX="288.0" layoutY="132.0" text="Cônjuge" />
       <TextField fx:id="txtNomeConjuge" layoutX="366.0" layoutY="127.0" prefHeight="25.0" prefWidth="420.0" />
@@ -90,8 +93,18 @@
             <Font name="Arial Bold Italic" size="12.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" />
-      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="335.0" layoutY="386.0" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+      <ComboBox fx:id="cbxSexo" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" promptText="Selecione">
+        <items>
+          <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Masculino" />
+            <String fx:value="Feminino" />
+          </FXCollections>
+        </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="323.0" layoutY="438.0" onAction="#salvar" prefHeight="42.0" prefWidth="145.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="25" />
          </graphic>
@@ -106,5 +119,22 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
+      <Label layoutX="15.0" layoutY="385.0" text="Fiador" />
+      <ComboBox fx:id="fiador_locatario" layoutX="112.0" layoutY="381.0" prefHeight="25.0" prefWidth="348.0" promptText="Selecione">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <!--Adicionar-->
+        </FXCollections>
+      </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+    </ComboBox>    
+      <Separator layoutY="363.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label layoutX="14.0" layoutY="366.0" text="AVALISTA">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

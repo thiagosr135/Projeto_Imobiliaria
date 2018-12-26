@@ -17,6 +17,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import projeto_imobiliaria.model.Locatario_Fisico;
 
 /**
  * FXML Controller class
@@ -26,7 +30,7 @@ import javafx.scene.control.TextField;
 public class LocatarioPessoaFisicaController implements Initializable {
 
     @FXML
-    private TextField txtNomeLocador;
+    private TextField txtNomeLocatario;
     @FXML
     private DatePicker dtpDataNascimento;
     @FXML
@@ -65,6 +69,8 @@ public class LocatarioPessoaFisicaController implements Initializable {
     private TextField txtCEP;
     @FXML
     private ComboBox<?> cbxSexo;
+    @FXML
+    private ComboBox<?> fiador_locatario;
 
     /**
      * Initializes the controller class.
@@ -72,17 +78,17 @@ public class LocatarioPessoaFisicaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-       //Máscaras dos campos
+        //Máscaras dos campos
         MaskFieldUtil.cpfField(txtCPF);
         MaskFieldUtil.numericField(txtNumeroCasa);
         MaskFieldUtil.foneField(txtTelefone);
         MaskFieldUtil.foneField(txtCelular);
         MaskFieldUtil.cepField(txtCEP);
-    }    
+    }
 
     @FXML
     private void buscarCEP(ActionEvent event) {
-         ViaCEP viaCep = new ViaCEP();
+        ViaCEP viaCep = new ViaCEP();
 
         try {
             viaCep.buscar(txtCEP.getText());
@@ -91,7 +97,7 @@ public class LocatarioPessoaFisicaController implements Initializable {
             txtBairro.setText(viaCep.getBairro());
             txtCidade.setText(viaCep.getLocalidade());
             txtUF.setText(viaCep.getUf());
-            
+
         } catch (ViaCEPException ex) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERRO");
@@ -100,5 +106,53 @@ public class LocatarioPessoaFisicaController implements Initializable {
             alert.showAndWait();
         }
     }
-    
+
+    @FXML
+    private void salvar(ActionEvent event) {
+
+        if (txtNomeLocatario == null || txtNomeLocatario.getText().trim().equals("")
+                || txtRG == null || txtRG.getText().trim().equals("")
+                || txtCPF == null || txtCPF.getText().trim().equals("")
+                || txtCelular == null || txtCelular.getText().trim().equals("")) {
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Campos Incorretos!");
+            alert.setHeaderText(null);
+            alert.setContentText("Preencha todos os campos marcados com asteriscos corretamente");
+            alert.showAndWait();
+
+        } else {
+            gravar();
+        }
+
+    }
+
+    public void gravar() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("imobisoft");
+        EntityManager em = emf.createEntityManager();
+
+        Locatario_Fisico locatarioF = new Locatario_Fisico();
+
+        locatarioF.setNome(txtNomeLocatario.getText());
+//        datanascimento
+        locatarioF.setSexo((String) cbxSexo.getSelectionModel().getSelectedItem());
+        locatarioF.setLocalNascimento(txtNascidoEm.getText());
+        locatarioF.setRG(txtRG.getText());
+        locatarioF.setCPF(txtCPF.getText());
+        locatarioF.setProfissao(txtProfissao.getText());
+        locatarioF.setNomeMae(txtNomeMae.getText());
+        locatarioF.setEstadoCivil((String) cbxEstadoCivil.getSelectionModel().getSelectedItem());
+        locatarioF.setConjuge(txtNomeConjuge.getText());
+        locatarioF.setLogradouro(txtLogradouro.getText());
+        locatarioF.setNumeroCasa(txtNumeroCasa.getText());
+        locatarioF.setBairro(txtBairro.getText());
+        locatarioF.setCidade(txtCidade.getText());
+        locatarioF.setUF(txtUF.getText());
+        locatarioF.setCEP(txtCEP.getText());
+        locatarioF.setComplemento(txtComplemento.getText());
+        locatarioF.setTelefone(txtTelefone.getText());
+        locatarioF.setCelular(txtCelular.getText());
+        locatarioF.setEmail(txtEmail.getText());
+
+    }
 }

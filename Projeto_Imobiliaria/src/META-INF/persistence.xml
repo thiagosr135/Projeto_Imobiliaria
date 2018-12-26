@@ -6,7 +6,11 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Aqui são listadas todas as entidades -->
-        <class></class>
+        <class>projeto_imobiliaria.model.Locador</class>
+        <class>projeto_imobiliaria.model.Locatario_Fisico</class>
+        <class>projeto_imobiliaria.model.Locatario_Juridico</class>
+        <class>projeto_imobiliaria.model.Fiador</class>
+        <class>projeto_imobiliaria.model.Objeto</class>
 
         <properties>            
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

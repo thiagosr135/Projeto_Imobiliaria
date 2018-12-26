@@ -26,14 +26,13 @@ import javafx.scene.layout.AnchorPane;
  */
 public class LocatarioController implements Initializable {
 
-    @FXML
     private AnchorPane acpTipoPessoa;
-    @FXML
-    private TextField txtNomeLocador1;
     @FXML
     private JFXRadioButton rbPessoaJuridica;
     @FXML
     private JFXRadioButton rbPessoaFisica;
+    
+    
 
     /**
      * Initializes the controller class.
@@ -44,7 +43,6 @@ public class LocatarioController implements Initializable {
     }    
 
     //Se o botão Pessoa Jurídica for selecionado
-    @FXML
     private void PessoaJurica(ActionEvent event) throws IOException {
     
         /** Verificar RadioButton e setar a tela de cadastro */
@@ -60,7 +58,6 @@ public class LocatarioController implements Initializable {
     }
 
     //Se o botão Pessoa Física for selecionado
-    @FXML
     private void PessoaFisica(ActionEvent event) throws IOException {
         /** Verificar RadioButton e setar a tela de cadastro */
         if (rbPessoaFisica.isSelected()){
@@ -72,6 +69,10 @@ public class LocatarioController implements Initializable {
              alert.setTitle("Erro ao carregar");
              alert.setHeaderText("Não foi possível abrir");
         };
+    }
+
+    @FXML
+    private void buscarCEP(ActionEvent event) {
     }
     
 }

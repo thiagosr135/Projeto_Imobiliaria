@@ -69,8 +69,6 @@ public class LocadorController implements Initializable {
     private TextField txtCEP;
     @FXML
     private ComboBox<?> cbxSexo;
-    @FXML
-    private TextField txtNomeLocador1;
 
     /**
      * Initializes the controller class.
@@ -113,7 +111,7 @@ public class LocadorController implements Initializable {
     private void Salvar(ActionEvent event) {
     /** Salvar dados do Locador*/
     
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("imobisoft"); 
         EntityManager em = emf.createEntityManager();
         
         Locador locador = new Locador();
@@ -139,6 +137,36 @@ public class LocadorController implements Initializable {
         locador.setCelular(txtCelular.getText());
         locador.setEmail(txtEmail.getText());
      
+        em.getTransaction().begin();
+        em.persist(locador);
+        em.getTransaction().commit(); 
+        limpar();
+    }
+    
+    private void limpar(){
+        txtNomeLocador.setText("");
+//        Data
+        txtNascidoEm.setText("");
+        txtRG.setText("");
+        txtCPF.setText("");
+        txtProfissao.setText("");
+        txtNomeMae.setText("");
+//        EstadoCivil
+//cbxEstadoCivil.setSelectionModel(SingleSelection<?>Selecione);
+        txtNomeConjuge.setText("");
+        txtLogradouro.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtUF.setText("");
+        txtNumeroCasa.setText("");
+        txtComplemento.setText("");
+        txtTelefone.setText("");
+        txtCelular.setText("");
+        txtEmail.setText("");
+        txtCEP.setText("");
+        
+        txtNomeLocador.requestFocus();
+        
     }
     
 }
