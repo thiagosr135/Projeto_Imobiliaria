@@ -80,7 +80,6 @@ public class LocatarioPessoaFisicaController implements Initializable {
         // TODO
         //Máscaras dos campos
         MaskFieldUtil.cpfField(txtCPF);
-        MaskFieldUtil.numericField(txtNumeroCasa);
         MaskFieldUtil.foneField(txtTelefone);
         MaskFieldUtil.foneField(txtCelular);
         MaskFieldUtil.cepField(txtCEP);
@@ -126,6 +125,31 @@ public class LocatarioPessoaFisicaController implements Initializable {
         }
 
     }
+    
+    public void limpar(){
+        txtNomeLocatario.setText("");
+//        Data
+        txtNascidoEm.setText("");
+        txtRG.setText("");
+        txtCPF.setText("");
+        txtProfissao.setText("");
+        txtNomeMae.setText("");
+//        EstadoCivil
+//cbxEstadoCivil.setSelectionModel(SingleSelection<?>Selecione);
+        txtNomeConjuge.setText("");
+        txtLogradouro.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtUF.setText("");
+        txtNumeroCasa.setText("");
+        txtComplemento.setText("");
+        txtTelefone.setText("");
+        txtCelular.setText("");
+        txtEmail.setText("");
+        txtCEP.setText("");
+        
+        txtNomeLocatario.requestFocus();
+    }
 
     public void gravar() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("imobisoft");
@@ -154,5 +178,9 @@ public class LocatarioPessoaFisicaController implements Initializable {
         locatarioF.setCelular(txtCelular.getText());
         locatarioF.setEmail(txtEmail.getText());
 
+        em.getTransaction().begin();
+        em.persist(locatarioF);
+        em.getTransaction().commit(); 
+        limpar();
     }
 }

@@ -16,6 +16,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import projeto_imobiliaria.model.Locatario_Juridico;
 
 /**
  * FXML Controller class
@@ -33,8 +37,6 @@ public class LocatarioPessoaJuridicaController implements Initializable {
     @FXML
     private TextField txtUF;
     @FXML
-    private TextField txtNumeroCasa;
-    @FXML
     private TextField txtComplemento;
     @FXML
     private TextField txtTelefone;
@@ -45,15 +47,13 @@ public class LocatarioPessoaJuridicaController implements Initializable {
     @FXML
     private TextField txtCEP;
     @FXML
-    private TextField txtRazaoSocial;
+    private TextField txtNome;
     @FXML
     private TextField txtInscricaoEstadual;
     @FXML
     private TextField txtCNPJ;
     @FXML
-    private TextField txtInscricaoMunicipal;
-    @FXML
-    private TextField txtRepresentante;
+    private TextField txtNumeroSede;
 
     /**
      * Initializes the controller class.
@@ -64,7 +64,6 @@ public class LocatarioPessoaJuridicaController implements Initializable {
        //Máscaras dos campos
         MaskFieldUtil.cnpjField(txtCNPJ);
         MaskFieldUtil.cepField(txtCEP);
-        MaskFieldUtil.numericField(txtNumeroCasa);
         MaskFieldUtil.foneField(txtTelefone);
         MaskFieldUtil.foneField(txtCelular);
       
@@ -89,6 +88,52 @@ public class LocatarioPessoaJuridicaController implements Initializable {
             alert.setContentText("");
             alert.showAndWait();
         }
+    }
+
+    private void limpar(){
+        txtNome.setText("");
+        txtInscricaoEstadual.setText("");
+        txtCNPJ.setText("");
+        txtLogradouro.setText("");
+        txtNumeroSede.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtUF.setText("");
+        txtCEP.setText("");
+        txtComplemento.setText("");
+        txtTelefone.setText("");
+        txtCelular.setText("");
+        txtEmail.setText("");
+        
+        txtNome.requestFocus();
+    }
+    
+    @FXML
+    private void salvar(ActionEvent event) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("imobisoft");
+        EntityManager em = emf.createEntityManager();
+        
+        Locatario_Juridico locatarioJ = new Locatario_Juridico();
+        
+        locatarioJ.setNome(txtNome.getText());
+        locatarioJ.setIncricaoEstadual(txtInscricaoEstadual.getText());
+        locatarioJ.setCNPJ(txtCNPJ.getText());
+        locatarioJ.setLogradouro(txtLogradouro.getText());
+        locatarioJ.setNumero(txtNumeroSede.getText());
+        locatarioJ.setBairro(txtBairro.getText());
+        locatarioJ.setCidade(txtCidade.getText());
+        locatarioJ.setUF(txtUF.getText());
+        locatarioJ.setCEP(txtCEP.getText());
+        locatarioJ.setComplemento(txtComplemento.getText());
+        locatarioJ.setTelefone(txtTelefone.getText());
+        locatarioJ.setCelular(txtCelular.getText());
+        locatarioJ.setEmail(txtEmail.getText());
+        
+        em.getTransaction().begin();
+        em.persist(locatarioJ);
+        em.getTransaction().commit();
+        limpar();
+        
     }
     
 }

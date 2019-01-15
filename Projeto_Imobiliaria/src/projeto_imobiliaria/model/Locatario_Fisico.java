@@ -5,6 +5,7 @@
  */
 package projeto_imobiliaria.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import javax.persistence.Id;
  *
  * @author thiag
  */
+
+@Entity
 public class Locatario_Fisico {
 @Id
 @GeneratedValue (strategy = GenerationType.IDENTITY)

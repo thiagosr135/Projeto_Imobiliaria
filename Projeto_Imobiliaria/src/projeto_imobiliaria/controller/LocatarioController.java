@@ -26,11 +26,22 @@ import javafx.scene.layout.AnchorPane;
  */
 public class LocatarioController implements Initializable {
 
+    @FXML
     private AnchorPane acpTipoPessoa;
     @FXML
     private JFXRadioButton rbPessoaJuridica;
     @FXML
     private JFXRadioButton rbPessoaFisica;
+    @FXML
+    private TextField txtNomeLocador1;
+    @FXML
+    private AnchorPane tabelaPessoaFisica;
+    @FXML
+    private JFXRadioButton rbPessoaFisicaTB;
+    @FXML
+    private JFXRadioButton rbPessoaJuridicaTB;
+    @FXML
+    private AnchorPane ancTabelaPessoa;
     
     
 
@@ -43,6 +54,7 @@ public class LocatarioController implements Initializable {
     }    
 
     //Se o botão Pessoa Jurídica for selecionado
+    @FXML
     private void PessoaJurica(ActionEvent event) throws IOException {
     
         /** Verificar RadioButton e setar a tela de cadastro */
@@ -58,7 +70,9 @@ public class LocatarioController implements Initializable {
     }
 
     //Se o botão Pessoa Física for selecionado
+    @FXML
     private void PessoaFisica(ActionEvent event) throws IOException {
+        
         /** Verificar RadioButton e setar a tela de cadastro */
         if (rbPessoaFisica.isSelected()){
            rbPessoaJuridica.setSelected(false);
@@ -68,11 +82,41 @@ public class LocatarioController implements Initializable {
              Alert alert = new Alert(Alert.AlertType.ERROR);
              alert.setTitle("Erro ao carregar");
              alert.setHeaderText("Não foi possível abrir");
-        };
+        }
+        
+        
+    }
+
+    private void carregar(){
+        
     }
 
     @FXML
-    private void buscarCEP(ActionEvent event) {
+    private void carregarTabelaPessoaFisica(ActionEvent event) throws IOException {
+        if (rbPessoaFisicaTB.isSelected()){
+           rbPessoaJuridicaTB.setSelected(false);
+           AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/TBPessoaFisica.fxml"));
+           ancTabelaPessoa.getChildren().setAll(pane);
+        }else{
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("Erro ao carregar");
+             alert.setHeaderText("Não foi possível abrir");
+        }
     }
+
+    @FXML
+    private void carregarTabelaPessoaJuridica(ActionEvent event) throws IOException {
+        if(rbPessoaJuridicaTB.isSelected()){
+           rbPessoaFisicaTB.setSelected(false);
+           AnchorPane pane = FXMLLoader.load(getClass().getResource("/projeto_imobiliaria/view/TBPessoaJuridica.fxml"));
+           ancTabelaPessoa.getChildren().setAll(pane);
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro ao carregar");
+            alert.setHeaderText("Não foi possível abrir");
+        } 
+    }
+    
+   
     
 }

@@ -3,15 +3,11 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -37,7 +33,6 @@
                               </JFXRadioButton>
                            </children>
                         </AnchorPane>
-                        <Separator layoutX="10.0" layoutY="401.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <AnchorPane layoutX="33.0" layoutY="203.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <AnchorPane fx:id="acpTipoPessoa" layoutX="10.0" layoutY="10.0" prefHeight="442.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
@@ -48,25 +43,15 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTreeTableView layoutY="45.0" prefHeight="373.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                           <columns>
-                              <TreeTableColumn prefWidth="55.0" text="ID" />
-                              <TreeTableColumn prefWidth="219.0" text="Nome" />
-                              <TreeTableColumn prefWidth="92.0" text="RG" />
-                              <TreeTableColumn prefWidth="170.0" text="CPF" />
-                              <TreeTableColumn prefWidth="139.0" text="Data de Nascimento" />
-                              <TreeTableColumn prefWidth="124.0" text="Celular" />
-                           </columns>
-                        </JFXTreeTableView>
                         <AnchorPane layoutX="59.0" prefHeight="62.0" prefWidth="165.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <AnchorPane prefHeight="45.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <JFXRadioButton layoutX="14.0" layoutY="14.0" selected="true" text="Pessoa Física">
+                              <JFXRadioButton fx:id="rbPessoaFisicaTB" layoutX="14.0" layoutY="14.0" onAction="#carregarTabelaPessoaFisica" text="Pessoa Física">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </JFXRadioButton>
-                              <JFXRadioButton layoutX="134.0" layoutY="14.0" text="Pessoa Jurídica">
+                              <JFXRadioButton fx:id="rbPessoaJuridicaTB" layoutX="134.0" layoutY="14.0" onAction="#carregarTabelaPessoaJuridica" text="Pessoa Jurídica">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -87,30 +72,7 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
-                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="671.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EDITAR" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="btn-padrao" />
-                              <String fx:value="btn-editar" />
-                           </styleClass>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="536.0" layoutY="430.0" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="EXCUIR" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="btn-padrao" />
-                              <String fx:value="btn-excluir" />
-                           </styleClass>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
+                        <AnchorPane id="AnchorPane" fx:id="ancTabelaPessoa" layoutX="7.0" layoutY="45.0" prefHeight="428.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children></AnchorPane>
               </content>
             </Tab>

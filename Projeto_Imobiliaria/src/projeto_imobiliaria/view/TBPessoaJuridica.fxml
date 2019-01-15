@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="ancPessoaJuridicaTB" prefHeight="428.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto_imobiliaria.controller.TBPessoaJuridicaController">
+   <children>
+      <TableView fx:id="tbPessoaJuridica" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+       
+        <columns>
+          <TableColumn prefWidth="38.0" text="ID">
+              <cellValueFactory>
+                  <PropertyValueFactory property="id" />
+              </cellValueFactory>
+          </TableColumn>
+          
+          <TableColumn minWidth="0.0" prefWidth="219.0" text="NOME">
+              <cellValueFactory>
+                  <PropertyValueFactory property="Nome" />
+              </cellValueFactory>
+          </TableColumn>
+          
+            <TableColumn minWidth="0.0" prefWidth="133.0" text="INSC. ESTADUAL">
+                <cellValueFactory>
+                  <PropertyValueFactory property="InscricaoEstadual" />  
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn minWidth="0.0" prefWidth="141.0" text="CNPJ">
+                <cellValueFactory>
+                    <PropertyValueFactory property="CNPJ" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn minWidth="0.0" prefWidth="91.0" text="TELEFONE">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Telefone" />
+                </cellValueFactory>
+            </TableColumn>
+               
+            <TableColumn minWidth="0.0" prefWidth="187.0" text="E-MAIL">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Email" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        
+      </TableView>
+   </children>
+</AnchorPane>

@@ -47,7 +47,7 @@
                         <TextField fx:id="txtCodigoUnico" layoutX="110.0" layoutY="110.0" prefHeight="25.0" prefWidth="77.0" />
                         <AnchorPane layoutY="224.0" prefHeight="196.0" prefWidth="800.0" style="-fx-background-color: #808080;" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0">
                            <children>
-                              <JFXTreeTableView layoutX="27.0" layoutY="38.0" prefHeight="187.0" prefWidth="773.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                              <JFXTreeTableView fx:id="tbvImoveis" layoutX="27.0" layoutY="38.0" prefHeight="187.0" prefWidth="773.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                                  <columns>
                                     <TreeTableColumn prefWidth="41.0" text="ID" />
                                     <TreeTableColumn prefWidth="344.0" text="Descrição" />
@@ -62,7 +62,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="351.0" layoutY="161.0" onAction="#salvar" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
+                        <JFXButton buttonType="RAISED" graphicTextGap="15.0" layoutX="369.0" layoutY="161.0" onAction="#salvar" prefHeight="44.0" prefWidth="115.0" stylesheets="@Styles.css" text="SALVAR" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
                            </graphic>

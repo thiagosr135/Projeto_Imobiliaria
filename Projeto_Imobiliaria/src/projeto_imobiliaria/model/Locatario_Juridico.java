@@ -5,6 +5,7 @@
  */
 package projeto_imobiliaria.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,13 +14,15 @@ import javax.persistence.Id;
  *
  * @author thiag
  */
+
+@Entity
 public class Locatario_Juridico {
  @Id
  @GeneratedValue (strategy = GenerationType.IDENTITY)
  private Integer id;
     
-    private String RazaoSocial, IncricaoMunicipal, CNPJ, Representante, Logradouro, Numero, Bairro, Cidade, UF, CEP,
-                   Complemento, Telefone, Celular, Email;
+    private String Nome, IncricaoEstadual, CNPJ, Logradouro, Numero, Bairro, Cidade, UF, CEP, Complemento, Telefone,
+    Celular, Email;
 
     public Integer getId() {
         return id;
@@ -29,20 +32,20 @@ public class Locatario_Juridico {
         this.id = id;
     }
 
-    public String getRazaoSocial() {
-        return RazaoSocial;
+    public String getNome() {
+        return Nome;
     }
 
-    public void setRazaoSocial(String RazaoSocial) {
-        this.RazaoSocial = RazaoSocial;
+    public void setNome(String RazaoSocial) {
+        this.Nome = RazaoSocial;
+    }
+    
+    public String getIncricaoEstadual() {
+        return IncricaoEstadual;
     }
 
-    public String getIncricaoMunicipal() {
-        return IncricaoMunicipal;
-    }
-
-    public void setIncricaoMunicipal(String IncricaoMunicipal) {
-        this.IncricaoMunicipal = IncricaoMunicipal;
+    public void setIncricaoEstadual(String IncricaoEstadual) {
+        this.IncricaoEstadual = IncricaoEstadual;
     }
 
     public String getCNPJ() {
@@ -51,14 +54,6 @@ public class Locatario_Juridico {
 
     public void setCNPJ(String CNPJ) {
         this.CNPJ = CNPJ;
-    }
-
-    public String getRepresentante() {
-        return Representante;
-    }
-
-    public void setRepresentante(String Representante) {
-        this.Representante = Representante;
     }
 
     public String getLogradouro() {
